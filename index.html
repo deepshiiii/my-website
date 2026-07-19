@@ -1,172 +1,745 @@
-<!DOCTYPE html>
+I understand exactly what you need. You want the "Alorica Way" menu item to have a dropdown menu that displays two links ("Global Footprint" and "Security & Compliance") in a single column layout, distinct from the two-column layout used by "Alorica IQ".I will implement this by:
+
+Creating a specific dropdown structure for "Alorica Way" that uses a single-column layout.
+
+Ensuring the hover/active states work correctly to reveal this menu.
+
+Keeping the "Alorica IQ" menu as a two-column layout as originally requested.
+
+Here is the complete, updated code with the specific "Alorica Way" dropdown implementation:HtmlCopied!Copy<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Alorica Way - Global CX Outsourcing Clone</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
+
         tailwind.config = {
+
             theme: {
+
                 extend: {
+
                     colors: {
+
                         'alorica-dark': '#002D72',
+
                         'alorica-blue': '#2A68F4',
+
                         'alorica-light-blue': '#E5F1FC',
+
                         'alorica-orange': '#FF6700',
+
                         'alorica-gray': '#F5F5F5',
+
                     },
+
                     fontFamily: {
+
                         sans: ['Inter', 'sans-serif'],
+
                     },
+
                 },
+
             },
+
         }
+
     </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+
         body { font-family: 'Inter', sans-serif; }
-        .megamenu:hover .dropdown-menu { display: block; }
-        .dropdown-menu { display: none; }
+
+        
+
+        /* Dropdown Logic */
+
+        .group:hover .dropdown-menu { 
+
+            display: block; 
+
+        }
+
+        .dropdown-menu { 
+
+            display: none; 
+
+        }
+
+        
+
+        /* Accordion Logic */
+
         .accordion-btn:hover, .accordion-btn:focus { background-color: #f0f0f0; }
+
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+
         .accordion-content.active { max-height: 1000px; }
+
     </style>
+
 </head>
+
 <body class="bg-white">
+
     <!-- Skip Link for Accessibility -->
+
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-alorica-blue p-4 z-50">Skip to Main Content</a>
 
     <!-- Header -->
+
     <header class="bg-white shadow-md sticky top-0 z-40">
+
         <nav class="container mx-auto px-4 py-4">
+
             <div class="flex justify-between items-center">
+
                 <!-- Logo Placeholder -->
+
                 <div class="flex items-center">
+
                     <svg class="h-10 w-auto text-alorica-dark" viewBox="0 0 200 50" fill="currentColor">
+
                         <rect width="50" height="50" rx="8"/>
+
                         <text x="60" y="35" font-size="24" font-weight="bold" fill="currentColor">LOGO</text>
+
                     </svg>
+
                 </div>
 
                 <!-- Desktop Navigation -->
+
                 <div class="hidden lg:flex items-center space-x-8">
+
+                    
+
+                    <!-- Alorica IQ (Two Column Dropdown) -->
+
                     <div class="relative megamenu group">
+
                         <button class="flex items-center text-gray-700 hover:text-alorica-blue font-medium transition-colors">
+
                             Alorica IQ
+
                             <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
                         </button>
-                        <div class="absolute left-0 mt-2 w-96 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="p-6 grid grid-cols-2 gap-4">
+
+                        <div class="absolute left-0 mt-2 w-[600px] bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+
+                            <div class="p-8 grid grid-cols-2 gap-8">
+
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-2">Services</h4
-                                    <ul class="space-y-2">
-                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue">Transformation Advisory</a></li>
-                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue">Analytics</a></li>
+
+                                    <h4 class="font-bold text-gray-900 mb-4 text-lg border-b pb-2">Transformation & Advisory</h4>
+
+                                    <ul class="space-y-3">
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Transformation Advisory</a></li>
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Customer Journey Mapping</a></li>
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Business Process Redesign</a></li>
+
                                     </ul>
+
                                 </div>
+
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-2">Innovation</h4>
-                                    <ul class="space-y-2">
-                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue">AIQ Lab</a></li>
-                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue">Digital Platforms</a></li>
+
+                                    <h4 class="font-bold text-gray-900 mb-4 text-lg border-b pb-2">Analytics & Innovation</h4>
+
+                                    <ul class="space-y-3">
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Alorica Analytics</a></li>
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">AIQ Innovation Lab</a></li>
+
+                                        <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Digital Platforms</a></li>
+
                                     </ul>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
-                    <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Alorica Way</a>
+
+                    <!-- Alorica Way (Single Column Dropdown - REQUESTED FEATURE) -->
+
+                    <div class="relative megamenu group">
+
+                        <button class="flex items-center text-gray-700 hover:text-alorica-blue font-medium transition-colors">
+
+                            Alorica Way
+
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+                        </button>
+
+                        <!-- Single Column Layout -->
+
+                        <div class="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+
+                            <div class="p-4">
+
+                                <ul class="space-y-2">
+
+                                    <li>
+
+                                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
+
+                                            Global Footprint
+
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
+
+                                            Security & Compliance
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Other Menu Items (No Dropdown) -->
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Services</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Industries</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Why Alorica?</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Careers</a>
+
                 </div>
 
                 <!-- Contact Button & Mobile Menu Toggle -->
+
                 <div class="flex items-center space-x-4">
+
                     <a href="#" class="hidden lg:inline-block bg-alorica-blue text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors">Contact</a>
+
                     <button id="mobile-menu-btn" class="lg:hidden text-gray-700 focus:outline-none">
+
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+
                     </button>
+
                 </div>
+
             </div>
 
             <!-- Mobile Menu -->
+
             <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+
                 <div class="flex flex-col space-y-4">
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Alorica IQ</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Alorica Way</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Services</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Industries</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Why Alorica?</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium">Careers</a>
+
                     <a href="#" class="bg-alorica-blue text-white px-6 py-2 rounded-md font-medium text-center">Contact</a>
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
 
     <main id="main-content">
+
         <!-- Hero Section -->
+
         <section class="bg-alorica-dark text-white py-20 lg:py-32">
+
             <div class="container mx-auto px-4">
+
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
+
                     <div>
+
                         <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">The Alorica Way</h1>
+
                         <p class="text-xl lg:text-2xl mb-8 text-gray-200">Equip passionate people with powerful technology to create long-term value</p>
+
                         <a href="#" class="inline-block bg-white text-alorica-dark px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors">Begin Your Journey</a>
+
                     </div>
+
                     <div class="relative">
+
                         <div class="aspect-w-16 aspect-h-9 bg-gray-800 rounded-lg overflow-hidden">
+
                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" class="object-cover w-full h-full">
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
         <!-- What We Do Section -->
+
         <section class="py-20 bg-white">
+
             <div class="container mx-auto px-4">
+
                 <div class="text-center max-w-4xl mx-auto mb-16">
+
                     <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What We Do</h2>
+
                     <p class="text-xl text-alorica-blue font-medium">Recognized by clients as their #1 CX partner, we deliver real results tailored to your business—powered by our AI-based operating model and global reach.</p>
+
                 </div>
 
                 <!-- Video Placeholder -->
+
                 <div class="max-w-3xl mx-auto mb-16">
+
                     <div class="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg flex items-center justify-center">
+
                         <div class="text-center">
+
                             <svg class="h-20 w-20 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+
                             <p class="text-gray-500">Video Content Placeholder</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
         <!-- The Alorica Difference Section -->
+
         <section class="py-20 bg-alorica-gray">
+
             <div class="container mx-auto px-4">
+
                 <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-16">The Alorica Difference</h2>
+
                 <div class="grid md:grid-cols-3 gap-8">
+
                     <!-- Card 1 -->
+
                     <div class="bg-white p-8 rounded-lg shadow-lg">
+
                         <div class="w-16 h-16 bg-alorica-blue rounded-full flex items-center justify-center mb-6">
+
                             <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+
                         </div>
+
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Powerful Technology</h3>
+
                         <p class="text-gray-600">Experience increased efficiency through thoughtfully designed and expertly deployed tech-enabled customer experiences</p>
+
                     </div>
+
                     <!-- Card 2 -->
+
                     <div class="bg-white p-8 rounded-lg shadow-lg">
+
                         <div class="w-16 h-16 bg-alorica-blue rounded-full flex items-center justify-center mb-6">
+
                             <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+
                         </div>
+
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Passionate People</h3>
+
                         <p class="text-gray-600">Achieve greater customer satisfaction by partnering with a team who tirelessly works as your brand ambassadors</p>
+
                     </div>
+
                     <!-- Card 3 -->
+
                     <div class="bg-white p-8 rounded-lg shadow-lg">
+
                         <div class="w-16 h-16 bg-alorica-blue rounded-full flex items-center justify-center mb-6">
-                            <svg class="h-8 w-8 text-white" fill="none"
+
+                            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Excellence</h3>
+
+                        <p class="text-gray-600">Realize your program's full potential with our end-to-end delivery model, designed to scale quickly and drive speed to proficiency</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Digital First Section -->
+
+        <section class="py-20 bg-white">
+
+            <div class="container mx-auto px-4">
+
+                <div class="text-center max-w-4xl mx-auto mb-16">
+
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Digital-First, Human-Centered Approach</h2>
+
+                    <p class="text-xl text-gray-600">Empowering clients to achieve and exceed their goals through our robust technology-enabled and people-powered delivery.</p>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="p-6 border border-gray-200 rounded-lg hover:border-alorica-blue transition-colors">
+
+                        <h3 class="text-xl font-bold text-alorica-orange mb-4">Global Footprint</h3>
+
+                        <p class="text-gray-600 mb-4">Access cost-effective, experienced talent through our tech-enabled language portfolio and global footprint.</p>
+
+                        <a href="#" class="text-alorica-blue font-bold hover:underline">Learn more &gt;</a>
+
+                    </div>
+
+                    <div class="p-6 border border-gray-200 rounded-lg hover:border-alorica-blue transition-colors">
+
+                        <h3 class="text-xl font-bold text-alorica-orange mb-4">Security & Compliance</h3>
+
+                        <p class="text-gray-600 mb-4">Trust, accountability, and integrity are embedded into everything we do—ensuring customer protection.</p>
+
+                        <a href="#" class="text-alorica-blue font-bold hover:underline">Learn more &gt;</a>
+
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg flex items-center justify-center min-h-[200px]">
+
+                        <p class="text-gray-400">Image Placeholder</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Accordion Section -->
+
+        <section class="py-20 bg-alorica-gray">
+
+            <div class="container mx-auto px-4">
+
+                <div class="text-center max-w-4xl mx-auto mb-16">
+
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Delivering High-Powered Performance Rooted in AI</h2>
+
+                    <p class="text-xl text-gray-600">We employ an end-to-end operating system with unmatched, proprietary technology.</p>
+
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+
+                        <!-- Accordion Item 1 -->
+
+                        <div class="border-b">
+
+                            <button class="accordion-btn w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleAccordion('acc1')">
+
+                                <span class="font-bold text-gray-900">Recruiting, Onboarding & Training</span>
+
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="icon-acc1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+                            </button>
+
+                            <div id="acc1" class="accordion-content px-6 py-4 bg-white">
+
+                                <p class="text-gray-600 mb-4">Boosting client agility and continuity by securing best-fit talent, then building brand experts through immersive learning.</p>
+
+                                <ul class="list-disc list-inside text-gray-600 space-y-2">
+
+                                    <li>Locally-curated instant outreach tools</li>
+
+                                    <li>AI-enabled talent profile matching</li>
+
+                                    <li>Proprietary Quest comprehensive training</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Accordion Item 2 -->
+
+                        <div class="border-b">
+
+                            <button class="accordion-btn w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleAccordion('acc2')">
+
+                                <span class="font-bold text-gray-900">Employee Experience</span>
+
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="icon-acc2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+                            </button>
+
+                            <div id="acc2" class="accordion-content px-6 py-4 bg-white">
+
+                                <p class="text-gray-600 mb-4">Driving increased eNPS and retention rates by fostering a culture of success through real-time feedback.</p>
+
+                                <ul class="list-disc list-inside text-gray-600 space-y-2">
+
+                                    <li>Proprietary Alorica Connect portal</li>
+
+                                    <li>Alorica University</li>
+
+                                    <li>Proprietary Health & Wellness programs</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Accordion Item 3 -->
+
+                        <div class="border-b">
+
+                            <button class="accordion-btn w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleAccordion('acc3')">
+
+                                <span class="font-bold text-gray-900">Operational Excellence</span>
+
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="icon-acc3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+                            </button>
+
+                            <div id="acc3" class="accordion-content px-6 py-4 bg-white">
+
+                                <p class="text-gray-600 mb-4">Delivering stronger performance, occupancy, and quality by deploying proven tools and technologies.</p>
+
+                                <ul class="list-disc list-inside text-gray-600 space-y-2">
+
+                                    <li>Agent background noise cancellation</li>
+
+                                    <li>Proprietary Spectrum WFM software</li>
+
+                                    <li>Quality management</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Accordion Item 4 -->
+
+                        <div class="border-b">
+
+                            <button class="accordion-btn w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleAccordion('acc4')">
+
+                                <span class="font-bold text-gray-900">Security & Compliance</span>
+
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="icon-acc4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+                            </button>
+
+                            <div id="acc4" class="accordion-content px-6 py-4 bg-white">
+
+                                <p class="text-gray-600 mb-4">Maximizing your business uptime through our unwavering commitment to security.</p>
+
+                                <ul class="list-disc list-inside text-gray-600 space-y-2">
+
+                                    <li>End-to-end approach to protect programs</li>
+
+                                    <li>PCI, HITRUST, SOC I/II, GDPR certified</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Testimonials Section -->
+
+        <section class="py-20 bg-white">
+
+            <div class="container mx-auto px-4">
+
+                <div class="text-center max-w-4xl mx-auto mb-16">
+
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Your Goals. Our Mission.</h2>
+
+                    <p class="text-xl text-gray-600">Your partner for digitally-charged CX.</p>
+
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+
+                        <h3 class="text-xl font-bold text-alorica-blue mb-4">Flexible & innovative</h3>
+
+                        <p class="text-gray-600 mb-6">"Alorica's executive and frontline leadership understand my business and are willing to be flexible / innovative to meet my needs."</p>
+
+                        <div class="font-bold text-gray-900">Vice President<br><span class="text-gray-500 font-normal">Technology & Media</span></div>
+
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+
+                        <h3 class="text-xl font-bold text-alorica-blue mb-4">Overcome Any Challenge</h3>
+
+                        <p class="text-gray-600 mb-6">"Your ability to collaborate, adapt, and innovate has been nothing short of outstanding."</p>
+
+                        <div class="font-bold text-gray-900">Customer Service Leader<br><span class="text-gray-500 font-normal">FinTech</span></div>
+
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+
+                        <h3 class="text-xl font-bold text-alorica-blue mb-4">Ranked #1</h3>
+
+                        <p class="text-gray-600 mb-6">"Extremely encouraging to see you already ranked number 1 in CSAT. Excited to see how these metrics evolve."</p>
+
+                        <div class="font-bold text-gray-900">Customer Care Executive<br><span class="text-gray-500 font-normal">Banking & Financial Services</span></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Results Section -->
+
+        <section class="py-20 bg-alorica-dark text-white">
+
+            <div class="container mx-auto px-4">
+
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16">Results You Can Measure</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+
+                    <div>
+
+                        <div class="text-5xl font-bold text-alorica-blue mb-4">$360k</div>
+
+                        <p class="text-gray-300">Yearly savings achieved through process improvements on a 25 FTE team new to outsourcing</p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="text-5xl font-bold text-alorica-blue mb-4">30%+</div>
+
+                        <p class="text-gray-300">increase in speed to proficiency with proprietary AI-powered training bot</p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="text-5xl font-bold text-alorica-blue mb-4">&gt;80%</div>
+
+                        <p class="text-gray-300">Improvement in AHT for a major credit card company</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Related Content Section -->
+
+        <section class="py-20 bg-white">
+
+            <div class="container mx-auto px-4">
+
+                <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-16">Related Content</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Card 1 -->
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+
+                            <svg class="h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="font-bold text-gray-900 mb-2">The Alorica Way Fact Sheet</h3>
+
+                            <p class="text-gray-600 text-sm mb-4">Alorica's customer service process delivers high-powered performance rooted in AI.</p>
+
+                            <a href="#" class="text-alorica-blue font-bold hover:underline">Read More</a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+
+                            <svg class="h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path
