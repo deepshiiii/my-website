@@ -175,55 +175,70 @@
                     <!-- Alorica Way (Single Column Dropdown - REQUESTED FEATURE) -->
 
                     <div class="relative megamenu group">
+    <button class="flex items-center text-gray-700 hover:text-alorica-blue font-medium transition-colors">
+        Alorica Way
+        <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <!-- Single Column Layout -->
+    <div class="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+        <div class="p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
+                        Global Footprint
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
+                        Security & Compliance
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                        <button class="flex items-center text-gray-700 hover:text-alorica-blue font-medium transition-colors">
-
-                            Alorica Way
-
-                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-
-                        </button>
-
-                        <!-- Single Column Layout -->
-
-                        <div class="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
-
-                            <div class="p-4">
-
-                                <ul class="space-y-2">
-
-                                    <li>
-
-                                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
-
-                                            Global Footprint
-
-                                        </a>
-
-                                    </li>
-
-                                    <li>
-
-                                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-alorica-light-blue hover:text-alorica-blue rounded-md font-medium transition-colors">
-
-                                            Security & Compliance
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+<!-- Services (Two Column Dropdown - NEW) -->
+<div class="relative megamenu group">
+    <button class="flex items-center text-gray-700 hover:text-alorica-blue font-medium transition-colors">
+        Services
+        <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div class="absolute left-0 mt-2 w-[600px] bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+        <div class="p-8 grid grid-cols-2 gap-8">
+            <!-- Column 1 -->
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4 text-lg border-b pb-2">Customer Experience</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">CX2GO</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Revenue Generation</a></li>
+                </ul>
+                <h4 class="font-bold text-gray-900 mt-6 mb-4 text-lg border-b pb-2">Operations</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Operations as a Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4 text-lg border-b pb-2">Digital Trust & Safety</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">User Profile Moderation</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">AI Fraud Prevention</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Identity Fraud Prevention</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">AI Policy Moderation</a></li>
+                </ul>
+                <h4 class="font-bold text-gray-900 mt-6 mb-4 text-lg border-b pb-2">Financial Business Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-600 hover:text-alorica-blue hover:pl-2 transition-all">Loan Servicing</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
                     <!-- Other Menu Items (No Dropdown) -->
 
-                    <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Services</a>
-
+                    
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Industries</a>
 
                     <a href="#" class="text-gray-700 hover:text-alorica-blue font-medium transition-colors">Why Alorica?</a>
