@@ -129,7 +129,7 @@
                                 />
                             </div>
                         </div>
-                        <button class="w-full md:w-auto bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors mt-4 font-medium">
+                        <button class="w-full md:w-auto bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors mt-4 font-medium cursor-pointer">
                             Search Jobs
                         </button>
                     </div>
@@ -163,7 +163,7 @@
                         <div class="flex items-center justify-between">
                             <span class="text-gray-500 text-sm">Posted 1 day ago</span>
                             <!-- This link triggers the modal via hash change -->
-                            <a href="#apply-job" class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm font-medium inline-block text-center">
+                                                        <a href="#apply-job" class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm font-medium inline-block text-center cursor-pointer">
                                 Apply Now
                             </a>
                         </div>
@@ -215,7 +215,7 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <button class="bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium">
+                     <button class="bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium cursor-pointer">
                         View All Jobs
                     </button>
                 </div>
@@ -236,7 +236,7 @@
                         <p class="text-gray-700 mb-4 font-medium">
                             Register for job alerts and career updates
                         </p>
-                        <button class="bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors w-full font-medium">
+                        <button class="bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors w-full font-medium cursor-pointer">
                             Join Now
                         </button>
                     </div>
@@ -343,7 +343,7 @@
     <div id="jobModal" class="modal fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
@@ -391,10 +391,8 @@
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Location</h3>
                     <div class="bg-gray-100 p-4 rounded-lg mb-4">
                         <p class="text-gray-700 font-medium">GF to 4th and 6th to 12th Araneta Cyber Park, Cubao Quezon City, 1109, PH</p>
-                        <button class="text-alorica-blue hover:text-blue-700 text-sm font-medium mt-2 flex items-center">
+                        <button class="text-alorica-blue hover:text-blue-700 text-sm font-medium mt-2 flex items-center cursor-pointer">
                             <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0
-                                                                <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                             </svg>
                             Copy to Clipboard
@@ -415,12 +413,12 @@
                     <p class="text-xs text-gray-500 mt-2">Use control and scroll to zoom the map</p>
                 </div>
 
-                <!-- Action Buttons -->
+                                <!-- Action Buttons -->
                 <div class="flex flex-col md:flex-row gap-4 mb-8">
-                    <button class="flex-1 bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors font-medium">
+                    <button class="flex-1 bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors font-medium cursor-pointer">
                         Apply Now
                     </button>
-                    <button class="flex-1 bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium">
+                    <button class="flex-1 bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium cursor-pointer">
                         Save Job
                     </button>
                 </div>
