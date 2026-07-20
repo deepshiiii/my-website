@@ -480,6 +480,14 @@ const modal = document.getElementById("jobModal");
 function openModal() {
     modal.classList.add("active");
     document.body.classList.add("modal-open");
+
+    // Move keyboard focus to the close button
+    modal.querySelector('button').focus();
+}
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("modal") === "learning-specialist") {
+    openModal();
 }
 
 function closeModal() {
