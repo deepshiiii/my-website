@@ -1,306 +1,843 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Alorica - Career Opportunities</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
+
         tailwind.config = {
+
             theme: {
+
                 extend: {
+
                     colors: {
+
                         'alorica-blue': '#2A68F4',
+
                         'alorica-dark': '#043a63',
+
                         'alorica-light': '#7FA4F8',
+
                         'alorica-gray': '#f2f2f2',
+
                     },
+
                     fontFamily: {
+
                         'primary': ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+
                     }
+
                 }
+
             }
+
         }
+
     </script>
+
     <style>
-        /* Custom styles for functionality that requires minimal CSS */
-        .mobile-menu-toggle:checked + .mobile-menu {
-            display: block;
+
+        /* Modal Utilities */
+
+        .modal-open {
+
+            overflow: hidden;
+
         }
-        .mobile-menu {
+
+        .modal {
+
             display: none;
+
         }
+
+        .modal.active {
+
+            display: flex;
+
+        }
+
     </style>
+
 </head>
+
 <body class="font-primary bg-white">
+
     <!-- Header Section -->
-    <header class="bg-white shadow-sm">
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+
         <div class="container mx-auto px-4 py-4">
+
             <nav class="flex items-center justify-between">
+
                 <!-- Logo Placeholder -->
+
                 <div class="flex items-center">
+
                     <svg class="h-8 w-8 text-alorica-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
                         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+
                         <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+
                     </svg>
+
                     <span class="ml-2 text-xl font-bold text-gray-900">Alorica</span>
+
                 </div>
+
                 
+
                 <!-- Desktop Navigation -->
+
                 <div class="hidden md:flex items-center space-x-6">
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Jobs</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">About Us</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Careers</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Contact</a>
+
                     <button class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+
                         Sign In
+
                     </button>
+
                 </div>
+
                 
+
                 <!-- Mobile Menu Toggle -->
+
                 <div class="md:hidden">
+
                     <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle hidden">
+
                     <label for="mobile-menu-toggle" class="cursor-pointer">
+
                         <svg class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+
                         </svg>
+
                     </label>
+
                 </div>
+
             </nav>
+
             
+
             <!-- Mobile Menu -->
-            <div class="mobile-menu md:hidden mt-4 pb-4">
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t pt-4">
+
                 <div class="flex flex-col space-y-4">
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Jobs</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">About Us</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Careers</a>
+
                     <a href="#" class="text-gray-700 hover:text-alorica-blue transition-colors">Contact</a>
+
                     <button class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors w-full">
+
                         Sign In
+
                     </button>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
 
     <!-- Main Content -->
+
     <main>
+
         <!-- Hero Section with Job Search -->
+
         <section class="bg-gray-50 py-12 md:py-20">
+
             <div class="container mx-auto px-4">
+
                 <div class="max-w-4xl mx-auto">
+
                     <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
+
                         Find Your Next Career Opportunity
+
                     </h1>
+
                     <p class="text-lg text-gray-600 text-center mb-8">
+
                         Get to know Alorica—and discover career opportunities that let you be yourself!
+
                     </p>
+
                     
+
                     <!-- Job Search Box -->
+
                     <div class="bg-white p-6 rounded-lg shadow-md">
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                             <div>
+
                                 <label for="job-search" class="block text-sm font-medium text-gray-700 mb-2">
+
                                     Search Jobs
+
                                 </label>
+
                                 <input 
+
                                     type="text" 
+
                                     id="job-search" 
+
                                     placeholder="Job title, keywords"
+
                                     class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-alorica-blue focus:border-transparent"
+
                                 />
+
                             </div>
+
                             <div>
+
                                 <label for="location-search" class="block text-sm font-medium text-gray-700 mb-2">
+
                                     Location
+
                                 </label>
+
                                 <input 
+
                                     type="text" 
+
                                     id="location-search" 
+
                                     placeholder="City, state, or zip code"
+
                                     class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-alorica-blue focus:border-transparent"
+
                                 />
+
                             </div>
+
                         </div>
+
                         <button class="w-full md:w-auto bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors mt-4 font-medium">
+
                             Search Jobs
+
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
         <!-- Featured Jobs Section -->
+
         <section class="py-12 md:py-16">
+
             <div class="container mx-auto px-4">
+
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">
+
                     Featured Opportunities
+
                 </h2>
+
                 
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <!-- Job Card 1 -->
-                    <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Customer Service Representative</h3>
-                                <p class="text-gray-600">Remote Position</p>
-                            </div>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                                Full-time
-                            </span>
-                        </div>
-                        <p class="text-gray-600 mb-4 text-sm">
-                                Provide exceptional customer support through phone, email, and chat channels.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-500 text-sm">Posted 2 days ago</span>
-                            <button class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
-                                Apply Now
-                            </button>
-                        </div>
-                    </article>
 
-                    <!-- Job Card 2 -->
-                    <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <!-- Job Card 1 (This one triggers the specific modal you asked for) -->
+
+                    <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow relative overflow-hidden">
+
+                        <div class="absolute top-0 left-0 w-full h-1 bg-alorica-blue"></div>
+
                         <div class="flex items-start justify-between mb-4">
+
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Technical Support Specialist</h3>
-                                <p class="text-gray-600">Hybrid - Multiple Locations</p>
+
+                                <h3 class="text-lg font-semibold text-gray-900">Learning Specialist II</h3>
+
+                                <p class="text-gray-600">Cubao Quezon City, Philippines</p>
+
                             </div>
+
                             <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+
                                 Full-time
+
                             </span>
+
                         </div>
+
                         <p class="text-gray-600 mb-4 text-sm">
-                                Help customers resolve technical issues with patience and expertise.
+
+                            Join our Human Resources team as a Learning Specialist. Help us build the next generation of leaders.
+
                         </p>
+
                         <div class="flex items-center justify-between">
+
                             <span class="text-gray-500 text-sm">Posted 1 day ago</span>
-                            <button class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+
+                            <button onclick="openModal()" class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm font-medium">
+
                                 Apply Now
+
                             </button>
+
                         </div>
+
                     </article>
 
-                    <!-- Job Card 3 -->
+                    <!-- Job Card 2 (Placeholder) -->
+
                     <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+
                         <div class="flex items-start justify-between mb-4">
+
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Sales Associate</h3>
-                                <p class="text-gray-600">On-site - Various Locations</p>
+
+                                <h3 class="text-lg font-semibold text-gray-900">Customer Service Representative</h3>
+
+                                <p class="text-gray-600">Remote Position</p>
+
                             </div>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                                Part-time
+
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+
+                                Full-time
+
                             </span>
+
                         </div>
+
                         <p class="text-gray-600 mb-4 text-sm">
-                                Drive sales and build relationships with customers in a dynamic environment.
+
+                                Provide exceptional customer support through phone, email, and chat channels.
+
                         </p>
+
                         <div class="flex items-center justify-between">
-                            <span class="text-gray-500 text-sm">Posted 3 days ago</span>
-                            <button class="bg-alorica-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
-                                Apply Now
+
+                            <span class="text-gray-500 text-sm">Posted 2 days ago</span>
+
+                            <button class="bg-gray-200 text-gray-500 px-4 py-2 rounded cursor-not-allowed text-sm">
+
+                                Coming Soon
+
                             </button>
+
                         </div>
+
                     </article>
+
+                    <!-- Job Card 3 (Placeholder) -->
+
+                    <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+
+                        <div class="flex items-start justify-between mb-4">
+
+                            <div>
+
+                                <h3 class="text-lg font-semibold text-gray-900">Technical Support Specialist</h3>
+
+                                <p class="text-gray-600">Hybrid - Multiple Locations</p>
+
+                            </div>
+
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
+
+                                Part-time
+
+                            </span>
+
+                        </div>
+
+                        <p class="text-gray-600 mb-4 text-sm">
+
+                                Help customers resolve technical issues with patience and expertise.
+
+                        </p>
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-gray-500 text-sm">Posted 3 days ago</span>
+
+                            <button class="bg-gray-200 text-gray-500 px-4 py-2 rounded cursor-not-allowed text-sm">
+
+                                Coming Soon
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
                 </div>
 
                 <div class="text-center mt-8">
+
                     <button class="bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium">
+
                         View All Jobs
+
                     </button>
+
                 </div>
+
             </div>
+
         </section>
 
         <!-- Talent Community Section -->
+
         <section class="bg-alorica-dark py-12 md:py-16">
+
             <div class="container mx-auto px-4">
+
                 <div class="max-w-4xl mx-auto text-center">
+
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+
                         Join Our Talent Community
+
                     </h2>
+
                     <p class="text-gray-300 mb-8 text-lg">
+
                         Stay connected with us and be the first to know about new opportunities that match your skills and interests.
+
                     </p>
+
                     <div class="bg-white p-6 rounded-lg max-w-md mx-auto">
+
                         <p class="text-gray-700 mb-4 font-medium">
+
                             Register for job alerts and career updates
+
                         </p>
+
                         <button class="bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors w-full font-medium">
+
                             Join Now
+
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
         <!-- About Section -->
+
         <section class="py-12 md:py-16 bg-gray-50">
+
             <div class="container mx-auto px-4">
+
                 <div class="max-w-4xl mx-auto">
+
                     <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">
+
                         Why Work at Alorica?
+
                     </h2>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
                         <div class="text-center">
+
                             <div class="bg-alorica-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+
                                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+
                                 </svg>
+
                             </div>
+
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Competitive Benefits</h3>
+
                             <p class="text-gray-600 text-sm">
+
                                 Comprehensive health, dental, and retirement plans to support you and your family.
+
                             </p>
+
                         </div>
+
                         <div class="text-center">
+
                             <div class="bg-alorica-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+
                                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+
                                 </svg>
+
                             </div>
+
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Career Growth</h3>
+
                             <p class="text-gray-600 text-sm">
+
                                 Opportunities for advancement and professional development throughout your career.
+
                             </p>
+
                         </div>
+
                         <div class="text-center">
+
                             <div class="bg-alorica-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+
                                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.707M12 15a3 3 0 110-6 3 3 0 010 6zm0 0v-16m-7 3h14M5 12h14"/>
+
                                 </svg>
+
                             </div>
+
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Inclusive Culture</h3>
+
                             <p class="text-gray-600 text-sm">
+
                                 A diverse and inclusive workplace where everyone can be their authentic self.
+
                             </p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
     <!-- Footer Section -->
+
     <footer class="bg-alorica-blue text-white py-8">
+
         <div class="container mx-auto px-4">
+
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
                 <div>
+
                     <div class="flex items-center mb-4">
+
                         <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
                             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+
                             <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+
                         </svg>
+
                         <span class="ml-2 text-xl font-bold">Alorica</span>
+
                     </div>
+
                     <p class="text-blue-200 text-sm">
+
                         Empowering people to be their best.
+
                     </p>
+
                 </div>
+
                 <div>
+
                     <h4 class="font-semibold mb-4">Quick Links</h4>
+
                     <ul class="space-y-2">
+
                         <li><a href="#" class="text-blue-200 hover:text-white transition-colors text-sm">About Us</a></li>
+
                         <li><a href="#" class="text-blue-200 hover:text-white transition-colors text-sm">Careers</a></li>
-                        <li><a href="#" class="text-blue-200 hover:text
+
+                        <li><a href="#" class="text-blue-200 hover:text-white transition-colors text-sm">Contact</a></li>
+
+                        <li><a href="#" class="text-blue-200 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-semibold mb-4">Contact</h4>
+
+                    <p class="text-blue-200 text-sm mb-2">Support: 1-800-ALORICA</p>
+
+                    <p class="text-blue-200 text-sm">Email: support@alorica.com</p>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+
+                    <div class="flex space-x-4">
+
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.782 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.858-2.178-1.392-3.594-1.392-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.542 2.287 1.043 4.415 3.949 5.001-.692.184-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+
+                        </a>
+
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75 .79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-300 text-sm">
+
+                &copy; 2026 Alorica. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JOB APPLICATION MODAL (Hidden by default) -->
+
+    <div id="jobModal" class="modal fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
+
+        <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+
+            <!-- Close Button -->
+
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
+
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
+
+                </svg>
+
+            </button>
+
+            <!-- Modal Header -->
+
+            <div class="bg-gray-50 border-b border-gray-200 px-6 py-4">
+
+                <h2 class="text-2xl font-bold text-gray-900">Learning Specialist II</h2>
+
+                <p class="text-gray-600">Cubao Quezon City, Philippines</p>
+
+                <p class="text-alorica-blue font-medium mt-2">Be the First to Apply</p>
+
+            </div>
+
+            <!-- Modal Content -->
+
+            <div class="p-6">
+
+                <!-- Job Details Grid -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Job Identification</p>
+
+                        <p class="font-semibold text-gray-900">236737</p>
+
+                    </div>
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Job Category</p>
+
+                        <p class="font-semibold text-gray-900">Human Resources</p>
+
+                    </div>
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Posting Date</p>
+
+                        <p class="font-semibold text-gray-900">07/19/2026, 06:46 PM</p>
+
+                    </div>
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Job Schedule</p>
+
+                        <p class="font-semibold text-gray-900">Full time</p>
+
+                    </div>
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Job Shift</p>
+
+                        <p class="font-semibold text-gray-900">Evening</p>
+
+                    </div>
+
+                    <div class="bg-alorica-gray p-4 rounded-lg">
+
+                        <p class="text-sm text-gray-500 mb-1">Degree Level</p>
+
+                        <p class="font-semibold text-gray-900">Bachelor's Degree</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Location Section -->
+
+                <div class="mb-8">
+
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Location</h3>
+
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+
+                        <p class="text-gray-700 font-medium">GF to 4th and 6th to 12th Araneta Cyber Park, Cubao Quezon City, 1109, PH</p>
+
+                        <button class="text-alorica-blue hover:text-blue-700 text-sm font-medium mt-2 flex items-center">
+
+                            <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+
+                            </svg>
+
+                            Copy to Clipboard
+
+                        </button>
+
+                    </div>
+
+                    
+
+                    <!-- Map Placeholder -->
+
+                    <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
+
+                        <div class="absolute inset-0 bg-gray-300 opacity-50"></div>
+
+                        <div class="relative z-10 text-center">
+
+                            <svg class="h-12 w-12 text-gray-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5-5m0 0l5-5m-5 5h6m6 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+
+                            </svg>
+
+                            <p class="text-gray-500">Map View</p>
+
+                            <p class="text-xs text-gray-400 mt-1">© MapTiler © OpenStreetMap contributors | © Oracle Corporation</p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-2">Use control and scroll to zoom the map</p>
+
+                </div>
+
+                <!-- Action Buttons -->
+
+                <div class="flex flex-col md:flex-row gap-4 mb-8">
+
+                    <button class="flex-1 bg-alorica-blue text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors font-medium">
+
+                        Apply Now
+
+                    </button>
+
+                    <button class="flex-1 bg-white border-2 border-alorica-blue text-alorica-blue px-6 py-3 rounded hover:bg-alorica-blue hover:text-white transition-colors font-medium">
+
+                        Save Job
+
+                    </button>
+
+                </div>
+
+                <!-- Footer Message -->
+
+                <div class="bg-blue-50 border border-blue-100 p-4 rounded-lg text-center">
+
+                    <p class="text-alorica-blue font-bold">See What Makes Alorica Insanely Great</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Modal and Mobile Menu -->
+
+    <script>
+
+        // Modal Functions
+
+        function openModal() {
+
+            document.getElementById('jobModal')..classList.add('active');
+
+            document.body.classList.add('modal-open');
+
+        }
+
+        function closeModal() {
+
+            document.getElementById('jobModal').classList.remove('active');
+
+            document.body.classList.remove
