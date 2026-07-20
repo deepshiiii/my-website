@@ -460,6 +460,11 @@ the buttons are not clickable(the cursor should change when hovering over the bu
     // Move keyboard focus to the close button
     modal.querySelector('button').focus();
 }
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("modal") === "learning-specialist") {
+    openModal();
+}
 
         function closeModal() {
             modal.classList.remove('active');
